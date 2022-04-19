@@ -15,7 +15,7 @@ const bubbleSort = async () => {
       } else {
         array[j + 1].active = true;
       }
-      await sleep(0);
+      await sleep(10);
     }
   }
 };

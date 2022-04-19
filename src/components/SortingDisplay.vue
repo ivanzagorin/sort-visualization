@@ -40,7 +40,7 @@ export default {
   color: #fff;
   word-break: break-all;
   overflow: hidden;
-  transition: background-color 0.1s;
+  transition: 0.1s;
   &.active{
     background: #FFAB40;
   }
