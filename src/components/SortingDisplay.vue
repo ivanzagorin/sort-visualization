@@ -3,7 +3,7 @@
     <div
       v-for="item in sortingArray"
       :key="item.id"
-      :style="`height: ${100 / maxNumber * item.value}%;width: calc(100% / ${sortingArray.length} - 5px);`"
+      :style="getStyles(item.value)"
       :class="['sorting-item', item.active ? 'active' : '']"
     >{{ item.value }}</div>
   </v-container>
@@ -15,6 +15,15 @@ import {mapGetters} from 'vuex';
 export default {
   beforeMount() {
     this.$store.commit('generateSortingArray');
+  },
+
+  methods: {
+    getStyles(itemValue) {
+      return {
+        height: `${100 / this.maxNumber * itemValue}%`,
+        width: `calc(${100 / this.sortingArray.length}% - 5px)`
+      }
+    }
   },
 
   computed : {
